@@ -1,0 +1,60 @@
+{
+	"devices": [{
+			"deviceName": "garage",
+			"ipAddress": "example.com",
+			"port" : 8080,
+			"commands": [{
+					"name": "open",
+					"url": "press"
+				},
+				{
+					"name": "close",
+					"url": "press"
+				},
+				{
+					"name": "check",
+					"url": ""
+				}
+			]
+		},
+		{
+			"deviceName": "alarm",
+			"ipAddress": "example.com",
+			"port" : 80,
+			"commands": [{
+					"name": "on",
+					"url": "alarmon"
+				},
+				{
+					"name": "off",
+					"url": "alarmoff"
+				},
+				{
+					"name": "monitor",
+					"url": "monitoron"
+				}
+			]
+
+		},
+		{
+			"deviceName": "tv",
+			"ipAddress": "lgtv",
+			"port" : 3000,
+			"commands": [{
+					"name": "poweroff",
+					"url": "api/lgtv/poweroff"
+				},
+				{
+					"name": "mute",
+					"url": "api/lgtv/mute"
+				},
+				{
+					"name": "volume",
+					"url": "api/lgtv/volume"
+				}
+			]
+
+		}
+
+	]
+}
