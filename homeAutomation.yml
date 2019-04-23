@@ -1,0 +1,27 @@
+version: "3.7"
+services:
+  apigateway:
+    image: morphkurt/homeapi-webapp
+    configs:
+      - source: apiconfig
+        target: /usr/src/app/config.json
+    ports:
+      - 10001:3000
+    networks:
+      - front
+    deploy:
+      restart_policy:
+        condition: on-failure
+  lgtv:
+    image: morphkurt/lgtv-webapp
+    networks:
+      - front
+    deploy:
+      restart_policy:
+        condition: on-failure
+configs:
+  apiconfig:
+    file: /opt/homeapi/config.json
+networks:
+  front:
+
