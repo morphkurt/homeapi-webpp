@@ -1,0 +1,16 @@
+{
+  "name": "homeapigateway",
+  "version": "1.0.0",
+  "description": "Home Api Gateway",
+  "main": "run.js",
+  "dependencies": {
+    "express": "^4.16.4",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start" : "node run.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
