@@ -22,19 +22,17 @@ app.get('/api/:device/:command/:value?', (req, res) => {
 	if (device) {
 		var command = getCommand(command,device)
 		if (command) {
-			if (value){
-				request.get('http://'+device.ipAddress+":"+ device.port+'/'+command.url+'/'+value,function(error,response,body){
-					res.send('OK');				
+				request.get('http://'+device.ipAddress+":"+ device.port+'/'+command.url+'/'+value)
+				.on('error', function(err) {
+					console.log(err);
+					res.status(400)
+					.send('{"description":"unknown error occured"');
 				})
-			} else {
-				request.get('http://'+device.ipAddress+":"+ device.port+'/'+command.url,function(error,response,body){
-					res.send('OK');				
-				})
-
-			}
+				.pipe(res);
 		}	 
 		
-	} 
+	} 	
+	
 
 })
 
